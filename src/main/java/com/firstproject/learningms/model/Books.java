@@ -1,10 +1,39 @@
 package com.firstproject.learningms.model;
-//import javax.persistence.*;
-//
-//@Entity
-public class Books {
 
-    private Long id;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "company")
+
+public class Books {
+    public Books() {
+    }
+
+    public Books(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Id
+    //@GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
+
     private String name;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
